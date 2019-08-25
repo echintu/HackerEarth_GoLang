@@ -1,0 +1,76 @@
+/*
+// Sample code to perform I/O:
+
+fmt.Scanf("%s", &myname)            // Reading input from STDIN
+fmt.Println("Hello", myname)        // Writing output to STDOUT
+
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+*/
+
+// Write your code here
+/*
+// Sample code to perform I/O:
+
+fmt.Scanf("%s", &myname)            // Reading input from STDIN
+fmt.Println("Hello", myname)        // Writing output to STDOUT
+
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+*/
+
+// Write your code here
+/*
+// Sample code to perform I/O:
+
+fmt.Scanf("%s", &myname)            // Reading input from STDIN
+fmt.Println("Hello", myname)        // Writing output to STDOUT
+
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+*/
+
+// Write your code here
+package main
+import "fmt"
+import "sort"
+
+func main(){
+    var urlList int
+    var eachUrl string
+    var totalUrls sort.StringSlice
+    fmt.Scanf("%d",&urlList)
+    for i:=0;i<urlList-1;i=i+1{
+    fmt.Scanf("%s",&eachUrl)
+     totalUrls= append(totalUrls,eachUrl)
+    }
+    dup_map:=dup_countValues(totalUrls)
+    var es entries
+    for k,v:=range dup_map {
+        es=append(es,entry{val:v,key:k})
+    }
+    sort.Sort(sort.Reverse(es))
+    
+    fmt.Print(len(es),"\n")
+    for _,e :=range es {
+        fmt.Printf("%s\n",e.key)
+    }
+}
+func dup_countValues(list []string) map[string]int{
+    duplicate_frequency:=make(map[string]int)
+    for _, item := range list{
+        _,exist := duplicate_frequency[item]
+        if exist{
+            duplicate_frequency[item]+=1
+        }else{
+           duplicate_frequency[item]=1 
+        }
+    }
+        return duplicate_frequency
+}
+type entry struct{
+    val int
+    key string
+}
+type entries []entry
+func (s entries) Len() int { return len(s)}
+func (s entries) Less(i,j int) bool { return s[i].val<s[j].val}
+func (s entries) Swap(i,j int) {s[i],s[j]=s[j],s[i]}
+

@@ -1,0 +1,23 @@
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func main() {
+	var num int
+	var newValue int
+	target:=0
+	var a sort.IntSlice
+	fmt.Scanf("%d",&num)
+	for i:=0;i<=num-1;i=i+1{
+	fmt.Scanf("%d",&newValue)
+	 a = append(a, newValue)  
+	}
+     n := sort.SearchInts(a, target)
+      if a[n]-target < target-a[n-1] {
+                n += 1
+        }
+     fmt.Printf("%d\n", a[n-1])
+}

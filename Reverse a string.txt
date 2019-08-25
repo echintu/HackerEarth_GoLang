@@ -1,0 +1,16 @@
+package main
+import "fmt"
+
+func main(){
+    var myname string
+    fmt.Scanf("%s",&myname)
+    result:=reverse(myname)
+    fmt.Println(result)
+}
+func reverse(s string) string {
+    reverses:=[]rune(s)
+    for i,j :=0,len(reverses)-1;i<j;i,j=i+1,j-1{
+        reverses[i],reverses[j]=reverses[j],reverses[i]
+    }
+    return string(reverses)
+}
