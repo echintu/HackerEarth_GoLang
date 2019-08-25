@@ -1,4 +1,4 @@
-# HackerEarth_GoLang
+# HackerEarth - Go
 Solutions for the HackerEarth Go lang problems
 Closest to Zero
 Divisibility check
